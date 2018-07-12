@@ -1,0 +1,14 @@
+<div id = "recherche">
+   <input #searchBox id="search-box" (keyup)="search(searchBox.value)" placeholder="Rechercher..."  type="text"/>
+   <ul class="search-result">
+    <li *ngFor="let cours of lcours$| async"
+      [class.selected]="cours === selectedCours"
+      (click)="onSelect(cours)">
+
+      <a>
+        {{cours.payload.val().auteur}} - {{cours.payload.val().titre}}
+      </a>
+    </li>
+  </ul>
+</div>
+<app-cours-detail class="detail" [cours]="selectedCours" [key]="selectedKey"></app-cours-detail>

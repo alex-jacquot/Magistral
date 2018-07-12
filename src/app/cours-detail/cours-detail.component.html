@@ -1,0 +1,96 @@
+<div class="detail">
+  <div *ngIf='cours'>
+    <!-- Si pas de modification -->
+    <div *ngIf="!modification">
+      <div class="profil">
+        <div class="header">
+          <div class="titre">
+            id: {{this.key}}<br />
+            <h2>{{ cours.titre }}</h2> écrit par: {{cours.auteur}}<br /> Publié le: {{cours.dateCreation}}<br />
+            <br /> Note: {{cours.noteMoyenne}}<br />
+          </div>
+          <div class="headright">
+            <div class="boutons">
+              <button class="" (click)="modifTrue()">Modifier</button>
+              <button class="" (click)="deleteCours()">Supprimer</button>
+            </div>
+            <div class="categories">
+              <h3>Catégories</h3> {{cours.motsCles}}
+            </div>
+          </div>
+        </div>
+        <div class="corps">
+          <h3>Description</h3>
+          <div class="contenue">
+            <div class="ligne" *ngFor="let ligne of listeLignes">
+              {{ligne}}<br />
+            </div>
+          </div>
+
+          <div class="telechargeable">
+            <h3>Fichier</h3> {{cours.fichier}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Si modification -->
+    <div *ngIf="modification">
+      <div class="profil">
+        <div class="header">
+          <div class="headright">
+            <div class="boutons">
+              <button class="" (click)="updateCours(cours)">Envoyer</button>
+              <button class="" (click)="modifFalse()">Annuler</button>
+            </div>
+            <div class="categories">
+              <h3>Catégories</h3> <input [(ngModel)]="chaineMots" placeholder="auteur" id="motsCles">
+            </div>
+          </div>
+          <div class="titre">
+            id: {{this.key}}<br />
+            <h2><input [(ngModel)]="cours.titre" placeholder="auteur" id="titre"></h2> écrit par: {{cours.auteur}}<br /> Publié le: {{cours.dateCreation}}<br />
+            <br /> Note: {{this.noteMoyenne}}<br />
+          </div>
+
+        </div>
+        <div class="corps">
+          <h3>Description</h3>
+          <div class="contenue">
+            <textarea [(ngModel)]="cours.description" placeholder="auteur" id="description" rows="30" cols="50"></textarea>
+          </div>
+          <div class="telechargeable">
+            <h3>Fichier</h3>
+            <input [(ngModel)]="cours.fichier" placeholder="auteur" id="fichier">
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- espace commentaire -->
+    <h3>Commentaires</h3>
+    <div class="espaceCommentaires">
+      <hr />
+      <div class="commentaires" *ngFor="let commentaire of listeCommentaires | async">
+        <div class="boutons" *ngIf="userPseudo == commentaire.payload.val().auteur">
+          <button class="" (click)="deleteCommentaire(commentaire.key)">Supprimer</button>
+        </div>
+        <div class="auteur">
+          {{commentaire.payload.val().auteur}}
+        </div>
+        <div class="noteComm">
+          {{commentaire.payload.val().note}}/5
+        </div>
+        <div class="texte">
+          {{commentaire.payload.val().texte}}
+        </div>
+        <hr />
+      </div>
+      Note: <input type="number" [(ngModel)]="note" placeholder="Votre note (0-5)" min="0" max="5">
+      <textarea type="text" [(ngModel)]="texte" placeholder="Votre commentaire..." rows="4" cols="50"></textarea>
+      <div class="boutons">
+        <button class="" (click)="addCommentaire(note,texte)">Publier</button>
+      </div>
+    </div>
+  </div>
+</div>

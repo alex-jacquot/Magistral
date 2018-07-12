@@ -1,0 +1,68 @@
+/* coursComponent's private CSS styles */
+
+.selected {
+  background-color: #CFD8DC !important;
+  color: white;
+}
+.cours {
+  width: 100%;
+  height: inherit;
+  border-collapse: collapse;
+}
+.cours tr {
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #fff;
+}
+.cours tr.selected:hover {
+  background-color: #BBD8DC !important;
+  color: white;
+}
+.cours tr:hover {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
+}
+.cours tr:nth-child(even) {
+  background-color: #EAEFF7;
+}
+
+.cours th{
+  border-right: 1px solid #000;
+  background-color: #5B9BD5;
+  color: #fff;
+  font-size: small;
+}
+.cours tr:nth-child(even):hover {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
+}
+.cours th, .cours td{
+    border-bottom:1px solid #000;
+    text-align:center;
+    vertical-align:center;
+    margin:0;
+    padding:0;
+  }
+.cours td{
+  border-bottom:1px solid #000;
+  }
+
+
+.cours .auteur {
+  font-size: small;
+  color: white;
+  background-color: #607D8B;
+  width: 10%;
+}
+.cours .titre {
+  width: 75%;
+}
+.cours .date {
+  width: 10%;
+}
+.cours .note {
+  width: 5%;
+}

@@ -1,0 +1,58 @@
+input:hover {
+  background-color: #DDD;
+}
+.detail {
+    position: relative;
+  /*background-color:  #DDD;*/
+}
+span, label{
+    font-weight: bold;
+}
+
+.profil{
+  text-align: center;
+  overflow: auto;
+  border: 1px solid #999;
+}
+.boutons{
+  float: right;
+  margin: 2px;
+  padding: 2px;
+  overflow: auto;
+}
+
+.wrapper {
+  width:150px;
+  height:150px;
+  margin: 25px auto;
+  overflow: hidden;
+  border-radius:50%;
+  position: relative;
+  border: 1px solid #999;
+}
+
+.wrapper img {
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%)
+}
+
+.nom{
+  display: inline;
+}
+
+.prenom{
+  display: inline;
+}
+
+.pseudo{
+  display: block;
+  color: #111;
+  font: bold 32px "Roboto","Georgia",serif;
+
+}
+
+.adrmail{
+
+}

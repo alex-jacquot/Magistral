@@ -1,0 +1,52 @@
+<div class="detail" *ngIf="authService.currentUser">
+
+	<div class="profil">
+		<div class="boutons">
+			<div *ngIf="!modification">
+				<button class="" (click)="modifTrue()">Modifier</button>
+			</div>
+			<div *ngIf="modification">
+				<button class="" (click)="updateUtilisateur(user)">Envoyer</button>
+				<button class="" (click)="modifFalse()">Annuler</button>
+			</div>
+		</div>
+		<span>UID : </span> {{ authService.currentUserId }}<br/>
+		<div class="wrapper">
+			<img src="https://i.redd.it/1x4y9m4g22ky.jpg" alt="" />
+		</div>
+
+
+			<div *ngIf="!modification">
+				<div class="pseudo">{{user.pseudo}}</div>
+				<div class="nom">{{user.nom}}</div>
+				<div class="prenom">{{user.prenom}}</div>
+				<div class="adrmail">{{ authService.currentUserName }}</div>
+				<div class="note">
+					Note: <br/> placeholder
+				</div>
+			</div>
+				<div *ngIf="modification">
+					<div class="nom"><input [(ngModel)]="user.nom" placeholder={{user.nom}} id="nom"></div>
+					<div class="prenom"><input [(ngModel)]="user.prenom" placeholder={{user.prenom}} id="prenom"></div>
+					<div class="pseudo"><input [(ngModel)]="user.pseudo" placeholder={{user.pseudo}} id="pseudo"></div>
+					<div class="adrmail">{{ authService.currentUserName }}</div>
+					<div class="note">
+						Note: <br/> placeholder
+					</div>
+					<!--div class="motdepasse">Mot de passe: <input [(ngModel)]="user.motDePasse" placeholder={{user.motDePasse}} id="motDePasse"></div-->
+					<div class="motdepasse">Mot de passe: {{user.motDePasse}} </div>
+				</div>
+
+		</div>
+	</div>
+
+	<div class="coursPublished">
+		<h3>Cours publiés</h3>
+		<app-cours-liste [listeCours] = "listeCoursPublies" ></app-cours-liste>
+	</div>
+
+	<div class="coursSauvegardés">
+		<h3>Cours sauvegardés</h3>
+		<!--[requete]="ref.orderByKey().equalTo(u.pseudo)).snapshotChanges()" -->
+		<!-- <app-cours-liste ></app-cours-liste> -->
+	</div>

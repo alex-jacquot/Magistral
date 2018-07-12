@@ -1,0 +1,20 @@
+<div class="corps">
+  <nav>
+    <h1>
+      {{ title }}
+    </h1>
+    <ul>
+      <li><a routerLink="/presentation">Accueil</a></li>
+      <li><a routerLink="/cours-liste">Cours</a></li>
+      <li><a *ngIf="login()" routerLink="/cours-creer">Proposer un cours</a></li>
+      <li><a routerLink="/recherche">Recherche</a></li>
+      <li style="float:right"><a *ngIf="login()" routerLink="/user-info">Profil</a></li>
+      <li style="float:right"><a *ngIf="!login()" routerLink="/login">Se Connecter</a></li>
+      <li style="float:right"><a *ngIf="login()" (click)="logout()">Déconnexion</a></li>
+      <!--<li style="float:right"><app-recherche></app-recherche></li>-->
+    </ul>
+  </nav>
+  <div class="contenue">
+    <router-outlet></router-outlet>
+  </div>
+</div>

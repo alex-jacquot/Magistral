@@ -1,0 +1,19 @@
+.login {
+    position: relative;
+    padding: inherit;
+}
+
+.login-form{
+    margin: auto;
+    padding: 20px;
+    background: #c4ecff;
+    border-radius: 5px;
+    width: 50%;
+    position: relative;
+    transition: all 5s ease-in-out;
+}
+
+.text-primary:hover{
+    background-color: #3498db;
+    color: #eee;
+}

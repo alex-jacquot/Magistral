@@ -1,0 +1,17 @@
+<table class="cours">
+  <tr>
+    <th>auteur</th>
+    <th>titre</th>
+    <th>date</th>
+    <th>note</th>
+  </tr>
+  <tr *ngFor = "let cours of listeCours | async "
+    [class.selected]="cours === selectedCours"
+    (click)="onSelect(cours)">
+    <td class ="auteur">{{cours.payload.val().auteur}}</td>
+    <td class = "titre">{{cours.payload.val().titre}}</td>
+    <td class = "date">{{cours.payload.val().dateCreation}}</td>
+    <td class = "note">{{cours.payload.val().noteMoyenne}}</td>
+  </tr>
+</table>
+<app-cours-detail class="detail" [cours]="selectedCours" [key]="selectedKey"></app-cours-detail>

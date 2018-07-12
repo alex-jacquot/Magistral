@@ -1,0 +1,11 @@
+<h2>Création d'un cours</h2>
+<label>titre:</label>
+<input type="text" [(ngModel)]="cours.titre" placeholder="titre">
+<label>description:</label>
+<textarea type="text" [(ngModel)]="cours.description" placeholder="description..." rows="10" cols="50"></textarea>
+<label>mots-clé:</label>
+<input type="text" [(ngModel)]="chaineMots" placeholder="mots-clé">
+<label>fichier:</label>
+<input type="file" [(ngModel)]="cours.fichier" placeholder="fichier">
+<button class="btn-publier" (click)="addCours()">Publier</button>
+<button class="btn-annuler" (click)="annuler()">Annuler</button>

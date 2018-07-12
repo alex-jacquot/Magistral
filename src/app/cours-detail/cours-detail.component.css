@@ -1,0 +1,85 @@
+input:hover {
+  background-color: #DDD;
+}
+
+.detail {}
+
+h2 {
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 120%;
+  color: #555;
+}
+
+.header {
+  overflow: auto;
+  background-color: #fff;
+  border: 1px solid #999;
+  padding: 5px;
+}
+.headright{
+  float: right;
+  overflow: auto;
+}
+.titre {
+  float: left;
+}
+
+.boutons {
+  right: 0;
+  overflow: auto;
+}
+
+.categories {
+  text-align: center;
+  overflow: auto;
+  margin-top: 20px;
+  padding: 5px;
+  border: 1px solid #999;
+  border-radius: 15px;
+}
+
+.corps {
+  overflow: auto;
+  margin: 2px;
+}
+
+.contenue {
+  border: 1px solid #999;
+  float: left;
+  width: 84%;
+  padding: 1%;
+}
+
+.telechargeable {
+  padding: 5px;
+  border: 1px solid #999;
+  border-radius: 15px;
+  float: right;
+  width: 15%;
+  background-color: #fff;
+}
+
+.espaceCommentaires {
+}
+
+
+.auteur{
+  font-family: "Roboto",UILanguageFont,Arial,sans-serif;
+  text-rendering: optimizeLegibility;
+  display: inline-block;
+  overflow: auto;
+}
+
+.noteComm{
+  display: inline-block;
+  overflow: auto;
+}
+
+.texte{
+  color: #555;
+  font: italic 300 16px "Roboto","Georgia",serif;
+  position: relative;
+}

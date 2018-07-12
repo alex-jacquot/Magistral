@@ -1,0 +1,35 @@
+.creation tr {
+  position: relative;
+  background-color: #fff;
+  vertical-align:center;
+}
+
+.creation tr:selected {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
+}
+
+input[type="submit"]{
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px;
+  background: #3498db;
+  text-decoration: none;
+}
+input[type="submit"]:hover{
+  background: #3cb0fd;
+  text-decoration: none;
+}
+
+input[type="reset"]{
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px;
+  background: #3498db;
+  text-decoration: none;
+}
+input[type="reset"]:hover{
+  background: #3cb0fd;
+  text-decoration: none;
+}
